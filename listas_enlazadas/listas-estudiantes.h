@@ -164,5 +164,4 @@ void eliminarListaAlumnos(alumNodo** listaAlumnos){
         free(aux);
         aux = *listaAlumnos;
     }
-    free(listaAlumnos);
 }
