@@ -198,8 +198,9 @@ int estaConDeuda(int gastos[], int montoOtorgado){
 }
 
 void mostrarUsuarios(nodoUsuario *listaUsuarios){
-    int gastoTotal = 0;
+    int gastoTotal;
     while(listaUsuarios){
+        gastoTotal = 0;
         printf("\nApellido: %s\n", listaUsuarios->datos.apellido);
         printf("Nombre: %s\n", listaUsuarios->datos.nombre);
         printf("DNI: %s\n", listaUsuarios->datos.DNI);
@@ -249,7 +250,7 @@ void eliminarLista(nodoUsuario **listaUsuarios){
         free(aux->datos.apellido);
         free(aux->datos.nombre);
         for(int i = 0; i < 7; i++){
-            aux->datos.gastos[i] = NULL;
+            aux->datos.gastos[i] = 0;
         }
         free(aux);
         aux = *listaUsuarios;
